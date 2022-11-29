@@ -191,17 +191,17 @@
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li class="nav-item dropdown active">
-              <a href="#" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
+            <li class="nav-item {{ $active == 'dashboard' ? 'active' : '' }}">
+              <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
             </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Kategori</span></a>
+            <li class="nav-item {{ $active == 'kategori' ? 'active' : '' }}">
+              <a href="{{ route('admin.category') }}" class="nav-link"><i class="fas fa-columns"></i> <span>Kategori</span></a>
             </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown"><i class="fas fa-ticket-alt"></i> <span>Kupon</span></a>
+            <li class="nav-item">
+              <a href="#" class="nav-link"><i class="fas fa-ticket-alt"></i> <span>Kupon</span></a>
             </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown"><i class="fas fa-images"></i> <span>Banner</span></a>
+            <li class="nav-item">
+              <a href="#" class="nav-link"><i class="fas fa-images"></i> <span>Banner</span></a>
             </li>
           </ul>
         </aside>
@@ -241,6 +241,7 @@
 
   <!-- Page Specific JS File -->
   <script src="{{ asset("../assets/js/page/index.js") }}"></script>
+  <script src="{{ asset("../assets/js/modal-trigger.js") }}"></script>
   @stack('addons-js')
 
 </body>

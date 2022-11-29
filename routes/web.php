@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +25,8 @@ Route::middleware('admin:admin')->group(function () {
     Route::post('admin/login', [AdminController::class, 'store'])->name('admin.login');
 });
 
+
+// User Routing
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -33,12 +37,13 @@ Route::middleware([
     })->name('dashboard');
 });
 
+
+// Admin Routing
 Route::middleware([
     'auth:sanctum,admin',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard')->middleware('auth:admin');
+    Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard')->middleware('auth:admin');
+    Route::get('/admin/category', [CategoryController::class, 'index'])->name('admin.category')->middleware('auth:admin');
 });
