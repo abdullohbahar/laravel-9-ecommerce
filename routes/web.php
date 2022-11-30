@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\admin\CouponController;
 use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
@@ -46,4 +47,5 @@ Route::middleware([
 ])->group(function () {
     Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard')->middleware('auth:admin');
     Route::get('/admin/category', [CategoryController::class, 'index'])->name('admin.category')->middleware('auth:admin');
+    Route::get('/admin/coupon', [CouponController::class, 'index'])->name('admin.coupon')->middleware('auth:admin');
 });

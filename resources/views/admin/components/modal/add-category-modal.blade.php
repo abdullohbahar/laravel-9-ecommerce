@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="modal-add-category" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Tambah Kategori</h5>
@@ -12,7 +12,10 @@
         <form action="">
           <div class="row">
             <div class="col-12">
-              <input type="text" name="category" class="form-control" id="" placeholder="Kategori Barang">
+              <div class="form-group">
+                <label for="">Nama Kategori</label>
+                <input type="text" name="category" class="form-control" id="" placeholder="Kategori Barang">
+              </div>
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-success btn-block mt-2">Tambah Kategori</button>

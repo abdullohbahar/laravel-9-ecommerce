@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('title')
-Kategori
+Kupon
 @endsection
 
 @push('addons-css')
@@ -15,9 +15,9 @@ Kategori
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="card">
           <div class="card-header">
-            <h4>Kategori Barang</h4>
+            <h4>Kupon</h4>
             <div class="card-header-form">
-              <button class="btn btn-success" id="button-add-category">+ Tambah Kategori</button>
+              <button class="btn btn-success" id="button-add-coupon">+ Tambah Kupon</button>
             </div>
           </div>
           <div class="card-header">
@@ -38,32 +38,30 @@ Kategori
               <table class="table table-striped table-md">
                 <tr>
                   <th>#</th>
-                  <th>Nama Kategori</th>
+                  <th>Nama Kupon</th>
+                  <th>Kode Kupon</th>
+                  <th>Potongan Harga</th>
                   <th>Action</th>
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td>Rumah Tangga</td>
+                  <td>Flash Sale</td>
+                  <td>212</td>
+                  <td>10%</td>
                   <td><a href="#" class="btn btn-warning">Ubah</a></td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>Buku</td>
+                  <td>Hari Kemerdekaan</td>
+                  <td>INDEPENDENCEDAY</td>
+                  <td>30%</td>
                   <td><a href="#" class="btn btn-warning">Ubah</a></td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td>Dapur</td>
-                  <td><a href="#" class="btn btn-warning">Ubah</a></td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Elektronik</td>
-                  <td><a href="#" class="btn btn-warning">Ubah</a></td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Fashion</td>
+                  <td>Promo Akhir Bulan</td>
+                  <td>AKHIRBULAN</td>
+                  <td>20%</td>
                   <td><a href="#" class="btn btn-warning">Ubah</a></td>
                 </tr>
               </table>
@@ -93,10 +91,10 @@ Kategori
 </div>
 
 {{-- Modal --}}
-@include('admin.components.modal.add-category-modal')
+@include('admin.components.modal.add-coupon-modal')
 
 @endsection
 
 @push('addons-js')
-  <script src="{{ asset("../assets/js/page/category.js") }}"></script>
+  <script src="{{ asset("../assets/js/page/coupon.js") }}"></script>
 @endpush

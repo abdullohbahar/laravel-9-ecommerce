@@ -197,8 +197,8 @@
             <li class="nav-item {{ $active == 'kategori' ? 'active' : '' }}">
               <a href="{{ route('admin.category') }}" class="nav-link"><i class="fas fa-columns"></i> <span>Kategori</span></a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link"><i class="fas fa-ticket-alt"></i> <span>Kupon</span></a>
+            <li class="nav-item {{ $active == 'kupon' ? 'active' : '' }}">
+              <a href="{{ route('admin.coupon') }}" class="nav-link"><i class="fas fa-ticket-alt"></i> <span>Kupon</span></a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link"><i class="fas fa-images"></i> <span>Banner</span></a>
@@ -241,7 +241,6 @@
 
   <!-- Page Specific JS File -->
   <script src="{{ asset("../assets/js/page/index.js") }}"></script>
-  <script src="{{ asset("../assets/js/modal-trigger.js") }}"></script>
   @stack('addons-js')
 
 </body>
