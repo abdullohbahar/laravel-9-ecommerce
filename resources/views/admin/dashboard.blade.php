@@ -263,4 +263,5 @@ Dashboard
 @endsection
 
 @push('addons-js')
+<script src="{{ asset("../assets/js/page/index.js") }}"></script>
 @endpush

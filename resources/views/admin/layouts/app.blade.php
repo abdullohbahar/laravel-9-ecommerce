@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="{{ asset("../assets/css/style.css") }}">
   <link rel="stylesheet" href="{{ asset("../assets/css/components.css") }}">
   @stack('addons-css')
+  @vite(['resources/js/app.js'])
 </head>
 
 <body>
@@ -200,8 +201,8 @@
             <li class="nav-item {{ $active == 'kupon' ? 'active' : '' }}">
               <a href="{{ route('admin.coupon') }}" class="nav-link"><i class="fas fa-ticket-alt"></i> <span>Kupon</span></a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link"><i class="fas fa-images"></i> <span>Banner</span></a>
+            <li class="nav-item {{ $active == 'banner' ? 'active' : '' }}">
+              <a href="{{ route('admin.banner') }}" class="nav-link"><i class="fas fa-images"></i> <span>Banner</span></a>
             </li>
           </ul>
         </aside>
@@ -240,7 +241,7 @@
   <script src="{{ asset("../assets/js/custom.js") }}"></script>
 
   <!-- Page Specific JS File -->
-  <script src="{{ asset("../assets/js/page/index.js") }}"></script>
+  
   @stack('addons-js')
 
 </body>

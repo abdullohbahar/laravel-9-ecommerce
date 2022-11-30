@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\BannerController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\admin\CouponController;
 use App\Http\Controllers\Admin\DashboardAdminController;
@@ -48,4 +49,5 @@ Route::middleware([
     Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard')->middleware('auth:admin');
     Route::get('/admin/category', [CategoryController::class, 'index'])->name('admin.category')->middleware('auth:admin');
     Route::get('/admin/coupon', [CouponController::class, 'index'])->name('admin.coupon')->middleware('auth:admin');
+    Route::get('/admin/banner', [BannerController::class, 'index'])->name('admin.banner')->middleware('auth:admin');
 });

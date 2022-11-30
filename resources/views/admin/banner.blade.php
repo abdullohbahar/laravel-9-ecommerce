@@ -1,10 +1,13 @@
 @extends('admin.layouts.app')
 
 @section('title')
-Kupon
+Kategori
 @endsection
 
 @push('addons-css')
+<!-- CSS Libraries -->
+  <link rel="stylesheet" href="{{ asset("../library/chocolat/dist/css/chocolat.css") }}">
+
 @endpush
 
 @section('content')
@@ -15,9 +18,9 @@ Kupon
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="card">
           <div class="card-header">
-            <h4>Kupon</h4>
+            <h4>Banner</h4>
             <div class="card-header-form">
-              <button class="btn btn-success" id="button-add-coupon">+ Tambah Kupon</button>
+              <button class="btn btn-success" id="button-add-banner">+ Tambah Banner</button>
             </div>
           </div>
           <div class="card-header">
@@ -38,30 +41,18 @@ Kupon
               <table class="table table-striped table-md">
                 <tr>
                   <th>#</th>
-                  <th>Nama Kupon</th>
-                  <th>Kode Kupon</th>
-                  <th>Potongan Harga</th>
+                  <th>Gambar Banner</th>
+                  <th>Nama Banner</th>
                   <th>Action</th>
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td>Flash Sale</td>
-                  <td>212</td>
-                  <td>10%</td>
-                  <td><a href="#" class="btn btn-warning">Ubah</a></td>
-                </tr>
-                <tr>
-                  <td>2</td>
+                  <td>
+                    <div class="gallery gallery-fw" data-item-height="150">
+                        <div class="gallery-item" data-image="{{ asset("../assets/img/example-image.jpg") }}" data-title="Image 1"></div>
+                    </div>
+                  </td>
                   <td>Hari Kemerdekaan</td>
-                  <td>INDEPENDENCEDAY</td>
-                  <td>30%</td>
-                  <td><a href="#" class="btn btn-warning">Ubah</a></td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Promo Akhir Bulan</td>
-                  <td>AKHIRBULAN</td>
-                  <td>20%</td>
                   <td><a href="#" class="btn btn-warning">Ubah</a></td>
                 </tr>
               </table>
@@ -91,10 +82,11 @@ Kupon
 </div>
 
 {{-- Modal --}}
-@include('admin.components.modal.add-coupon-modal')
+@include('admin.components.modal.add-banner-modal')
 
 @endsection
 
 @push('addons-js')
-  <script src="{{ asset("../assets/js/page/coupon/coupon.js") }}"></script>
+  <script src="{{ asset("../assets/js/page/banner/banner.js") }}"></script>
+      <script src="{{ asset("../library/chocolat/dist/js/jquery.chocolat.min.js") }}"></script>
 @endpush

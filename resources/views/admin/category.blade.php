@@ -98,5 +98,5 @@ Kategori
 @endsection
 
 @push('addons-js')
-  <script src="{{ asset("../assets/js/page/category.js") }}"></script>
+  <script src="{{ asset("../assets/js/page/category/category.js") }}"></script>
 @endpush
