@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('desa');
             $table->string('alamat');
             // $table->foreignUuid('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }

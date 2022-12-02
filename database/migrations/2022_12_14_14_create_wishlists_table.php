@@ -18,8 +18,8 @@ return new class extends Migration
         Schema::create('wishlists', function (Blueprint $table) {
             $table->uuid('id');
             $table->integer('quantity');
-            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignIdFor(Product::class)->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('set null');
+            $table->foreignIdFor(Product::class)->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }

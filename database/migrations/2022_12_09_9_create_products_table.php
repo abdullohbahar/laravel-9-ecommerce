@@ -27,11 +27,11 @@ return new class extends Migration
             $table->integer('diskon');
             $table->integer('terjual');
             $table->integer('stok');
-            $table->foreignIdFor(ProductPicture::class)->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignIdFor(Review::class)->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignIdFor(Comment::class)->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignIdFor(Category::class)->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignIdFor(Merchant::class)->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(ProductPicture::class)->onUpdate('cascade')->onDelete('set null');
+            $table->foreignIdFor(Review::class)->onUpdate('cascade')->onDelete('set null');
+            $table->foreignIdFor(Comment::class)->onUpdate('cascade')->onDelete('set null');
+            $table->foreignIdFor(Category::class)->onUpdate('cascade')->onDelete('set null');
+            $table->foreignIdFor(Merchant::class)->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }

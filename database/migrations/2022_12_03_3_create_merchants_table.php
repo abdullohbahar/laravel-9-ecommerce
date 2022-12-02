@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nama_toko');
             $table->string('deskripsi_toko');
             $table->string('total_penghasilan');
-            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }

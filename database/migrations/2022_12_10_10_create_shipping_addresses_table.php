@@ -17,8 +17,8 @@ return new class extends Migration
     {
         Schema::create('shipping_addresses', function (Blueprint $table) {
             $table->uuid('id');
-            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignUuid(Product::class)->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('set null');
+            $table->foreignUuid(Product::class)->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }

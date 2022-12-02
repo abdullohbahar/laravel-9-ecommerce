@@ -17,10 +17,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->uuid('id');
-            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('set null');
             $table->string('status');
             $table->integer('total_harga');
-            $table->foreignIdFor(ShippingAddress::class)->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(ShippingAddress::class)->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }

@@ -17,8 +17,8 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->uuid('id');
-            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignIdFor(Product::class)->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(User::class)->onUpdate('cascade')->onDelete('set null');
+            $table->foreignIdFor(Product::class)->onUpdate('cascade')->onDelete('set null');
             $table->integer('quantity');
             $table->timestamps();
         });

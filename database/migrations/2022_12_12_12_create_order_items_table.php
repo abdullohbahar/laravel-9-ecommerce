@@ -17,8 +17,8 @@ return new class extends Migration
     {
         Schema::create('order_items', function (Blueprint $table) {
             $table->uuid('id');
-            $table->foreignUuid(Order::class)->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignUuid(Product::class)->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignUuid(Order::class)->onUpdate('cascade')->onDelete('set null');
+            $table->foreignUuid(Product::class)->onUpdate('cascade')->onDelete('set null');
             $table->integer('quantity');
             $table->timestamps();
         });

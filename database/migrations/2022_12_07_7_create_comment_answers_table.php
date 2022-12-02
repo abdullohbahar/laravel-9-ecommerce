@@ -18,7 +18,7 @@ return new class extends Migration
         Schema::create('comment_answers', function (Blueprint $table) {
             $table->uuid('id');
             $table->text('comment_answer');
-            $table->foreignIdFor(Comment::class)->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(Comment::class)->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }
