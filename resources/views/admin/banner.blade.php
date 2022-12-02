@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('title')
-Kategori
+Banner
 @endsection
 
 @push('addons-css')
