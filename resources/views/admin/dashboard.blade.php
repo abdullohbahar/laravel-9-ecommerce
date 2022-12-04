@@ -41,7 +41,7 @@ Dashboard
                   <h4>Pengguna Terdaftar</h4>
                 </div>
                 <div class="card-body">
-                  59
+                  {{ $registeredUser }}
                 </div>
               </div>
             </div>
@@ -54,7 +54,7 @@ Dashboard
                   <h4>Toko</h4>
                 </div>
                 <div class="card-body">
-                  59
+                  {{ $merchant }}
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@ Dashboard
         </div>
       </div>
     </div>
-    <div class="row">
+    {{-- <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
         <div class="card gradient-bottom">
           <div class="card-header">
@@ -257,7 +257,7 @@ Dashboard
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
   </section>
 </div>
 @endsection

@@ -9,12 +9,17 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="">
+        <form wire:submit.prevent="store">
           <div class="row">
             <div class="col-12">
               <div class="form-group">
                 <label for="">Nama Kategori</label>
-                <input type="text" name="category" class="form-control" id="" placeholder="Kategori Barang">
+                <input type="text" name="category" class="form-control @error('category') is-invalid @enderror" id="" placeholder="Kategori Barang">
+                @error('category')
+                  <div class="invalid-feedback">
+                    {{ $message }}
+                  </div>
+                @enderror
               </div>
             </div>
             <div class="col-12">

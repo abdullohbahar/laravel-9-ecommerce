@@ -48,6 +48,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard')->middleware('auth:admin');
     Route::get('/admin/category', [CategoryController::class, 'index'])->name('admin.category')->middleware('auth:admin');
+    Route::get('/admin/create-category', [CategoryController::class, 'index'])->name('admin.create-category')->middleware('auth:admin');
     Route::get('/admin/coupon', [CouponController::class, 'index'])->name('admin.coupon')->middleware('auth:admin');
     Route::get('/admin/banner', [BannerController::class, 'index'])->name('admin.banner')->middleware('auth:admin');
 });

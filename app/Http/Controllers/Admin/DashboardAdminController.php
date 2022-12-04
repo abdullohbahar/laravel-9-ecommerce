@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Merchant;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardAdminController extends Controller
@@ -14,8 +16,13 @@ class DashboardAdminController extends Controller
      */
     public function index()
     {
+        $registeredUser = User::count();
+        $merchants = Merchant::count();
+
         $data = [
-            'active' => 'dashboard'
+            'registeredUser' => $registeredUser,
+            'merchant' => $merchants,
+            'active' => 'dashboard',
         ];
 
         return view('admin.dashboard', $data);
