@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{{ asset("../assets/css/components.css") }}">
   @stack('addons-css')
   @vite(['resources/js/app.js'])
+  @livewireStyles
 </head>
 
 <body>
@@ -235,12 +236,18 @@
   <script src="{{ asset("../library/owl.carousel/dist/owl.carousel.min.js") }}"></script>
   <script src="{{ asset("../library/summernote/dist/summernote-bs4.js") }}"></script>
   <script src="{{ asset("../library/chocolat/dist/js/jquery.chocolat.min.js") }}"></script>
+  <script src="{{ asset("../library/sweetalert/dist/sweetalert.min.js") }}"></script>
+  <script src="{{ asset("../assets/js/page/modules-sweetalert.js") }}"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
   <!-- Template JS File -->
-  <script src="{{ asset("../assets/js/scripts.js") }}"></script>
-  <script src="{{ asset("../assets/js/custom.js") }}"></script>
+  {{-- <script src="{{ asset("../assets/js/scripts.js") }}"></script>
+  <script src="{{ asset("../assets/js/custom.js") }}"></script> --}}
 
   <!-- Page Specific JS File -->
+  @livewireScripts
+
   
   @stack('addons-js')
 
